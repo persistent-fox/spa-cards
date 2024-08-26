@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { TCard, TGetCardsParams } from '../../types/products';
+import { TCard, TGetCardsParams } from '../../types/cards';
 
 export const cardsApi = createApi({
 	reducerPath: 'cardsApi',
