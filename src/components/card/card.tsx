@@ -6,6 +6,7 @@ import { ERoutes } from '../../types/routes.enum';
 import styled from 'styled-components';
 import { Checkbox } from '../checkbox';
 import { Icon } from '../icon/Icon';
+import { Label } from '../checkbox/Checkbox';
 
 type TCardProps = {
 	card: TCard;
@@ -28,8 +29,7 @@ export const Card: FC<TCardProps> = ({ card: { id, title, description, like, img
 				<Title title={title}>{title}</Title>
 				<Description>{description}</Description>
 			</StyledLink>
-			<input type='checkbox' checked={like} onChange={toggleLikeHandle} />
-			<Checkbox checked={like} type='secondary' />
+			<Checkbox type='secondary' onChange={toggleLikeHandle} checked={like} />
 			<Delete onClick={deleteCardHandle}>
 				<Icon iconId='delete' viewBox='0 0 384 512' />
 			</Delete>
@@ -94,5 +94,11 @@ const StyledCard = styled.li`
 		${Delete} {
 			display: flex;
 		}
+	}
+	label {
+		position: absolute;
+		left: 50%;
+		top: 30%;
+		transform: translate(-50%, -50%);
 	}
 `;

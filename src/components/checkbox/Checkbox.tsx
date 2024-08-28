@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
+import { ChangeEvent, DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../icon/Icon';
 
@@ -10,6 +10,8 @@ type TCheckboxProps = {
 } & DefaultInputPropsType;
 
 export const Checkbox: FC<TCheckboxProps> = ({ type = 'default', checked, ...restProps }) => {
+	console.log('checked', checked);
+
 	return (
 		<Label>
 			<Input type='checkbox' {...restProps} />
@@ -19,9 +21,9 @@ export const Checkbox: FC<TCheckboxProps> = ({ type = 'default', checked, ...res
 					<Text>Текст</Text>
 				</>
 			) : (
-				<>
-					<Icon iconId={checked ? 'like-filled' : 'like-empty'} viewBox='0 0 512 512' />
-				</>
+				<IconFrame>
+					<Icon width='100px' height='100px' iconId={checked ? 'like-filled' : 'like-empty'} viewBox='0 0 512 512' />
+				</IconFrame>
 			)}
 		</Label>
 	);
@@ -45,6 +47,15 @@ export const FakeCheckbox = styled.span`
 export const Text = styled.span`
 	line-height: 1;
 	cursor: pointer;
+`;
+
+export const IconFrame = styled.div`
+	opacity: 0.3;
+	color: #c41b1b;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+	}
 `;
 
 export const Input = styled.input`
