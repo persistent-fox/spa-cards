@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/spa-cards/static/js/main.f93ba7b4.js",
+    "main.js": "/spa-cards/static/js/main.ffe8719a.js",
     "static/media/sprites.svg": "/spa-cards/static/media/sprites.e97c23d2a44e5d1f27459319601103d1.svg",
     "index.html": "/spa-cards/index.html",
-    "main.f93ba7b4.js.map": "/spa-cards/static/js/main.f93ba7b4.js.map"
+    "main.ffe8719a.js.map": "/spa-cards/static/js/main.ffe8719a.js.map"
   },
   "entrypoints": [
-    "static/js/main.f93ba7b4.js"
+    "static/js/main.ffe8719a.js"
   ]
 }
