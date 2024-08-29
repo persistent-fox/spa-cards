@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Card, Cards, Error } from './pages';
 import { ERoutes } from './types/routes.enum';
 
