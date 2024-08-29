@@ -1,16 +1,29 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useGetCardByIdQuery } from '../../store/api/cards';
 import { Icon } from '../../components/icon';
 import { Button } from '../../components/button';
 import { Container } from '../../components/Container';
 import styled from 'styled-components';
 import { font } from '../../styles/Common';
+import { Preloader } from '../../components/preloader';
+import { Error } from '../../components/error';
+import { ERoutes } from '../../types/routes.enum';
 
 export const Card = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const { data, isLoading } = useGetCardByIdQuery(id!);
-	if (isLoading || !data) return <span>loading...</span>;
+	const { data, isLoading, isError } = useGetCardByIdQuery(id!);
+
+	if (isError)
+		return (
+			<>
+				<Link to={ERoutes.HOME}>Вернуться на главную</Link>
+				<Error message='Не удалось найти' />;
+			</>
+		);
+
+	if (isLoading || !data) return <Preloader />;
+
 	return (
 		<StyledCardPage>
 			<Container>

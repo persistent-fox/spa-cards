@@ -4,12 +4,14 @@ import { useGetCardsQuery } from '../../store/api/cards';
 import styled from 'styled-components';
 import { Container } from '../../components/Container';
 import { Switcher } from '../../components/switcher/Switcher';
+import { Preloader } from '../../components/preloader';
+import { Error } from '../../components/error';
 
 export const Cards = () => {
 	const [filter, setFilter] = useState(false);
-	const { data, isLoading } = useGetCardsQuery({ like: filter });
-
-	if (isLoading || !data) return <div>loading...</div>;
+	const { data, isLoading, isError } = useGetCardsQuery({ like: filter });
+	if (isError) return <Error message='Произошла ошибка' />;
+	if (isLoading || !data) return <Preloader />;
 	return (
 		<StyledCardsPage>
 			<Container>

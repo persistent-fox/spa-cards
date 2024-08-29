@@ -10,14 +10,11 @@ type TSwitcherProps = {
 } & DefaultInputPropsType;
 
 export const Switcher: FC<TSwitcherProps> = ({ checked, onClick, ...restProps }) => {
-	const toggleSwitcher = () => {
-		onClick();
-	};
 	return (
 		<Label>
 			<Text>Регулировка фильтра:</Text>
-			<Input checked={checked} type='checkbox' {...restProps} />
-			<Switch onClick={toggleSwitcher} />
+			<Input defaultChecked={checked} type='checkbox' {...restProps} />
+			<Switch onClick={onClick} />
 		</Label>
 	);
 };
