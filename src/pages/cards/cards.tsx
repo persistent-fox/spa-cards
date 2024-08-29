@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Card } from '../../components/card';
 import { useGetCardsQuery } from '../../store/api/cards';
 import styled from 'styled-components';
+import { Container } from '../../components/Container';
+import { Switcher } from '../../components/switcher/Switcher';
 
 export const Cards = () => {
 	const [filter, setFilter] = useState(false);
@@ -10,13 +12,16 @@ export const Cards = () => {
 	if (isLoading || !data) return <div>loading...</div>;
 	return (
 		<div>
-			<button onClick={() => setFilter(prevState => !prevState)}>Favorite</button>
-			<Title>Cats</Title>
-			<CardsList>
-				{data.map(card => (
-					<Card key={card.id} card={card} />
-				))}
-			</CardsList>
+			<Container>
+				{/* <button onClick={() => setFilter(prevState => !prevState)}>Favorite</button> */}
+				<Switcher onClick={() => setFilter(prevState => !prevState)} checked={filter} />
+				<Title>Cats</Title>
+				<CardsList>
+					{data.map(card => (
+						<Card key={card.id} card={card} />
+					))}
+				</CardsList>
+			</Container>
 		</div>
 	);
 };

@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { ERoutes } from '../../types/routes.enum';
 import styled from 'styled-components';
 import { Checkbox } from '../checkbox';
-import { Icon } from '../icon/Icon';
-import { Label } from '../checkbox/Checkbox';
+import { Icon } from '../icon';
 
 type TCardProps = {
 	card: TCard;

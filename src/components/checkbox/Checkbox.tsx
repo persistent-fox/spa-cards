@@ -1,6 +1,6 @@
 import { ChangeEvent, DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { Icon } from '../icon/Icon';
+import { Icon } from '../icon';
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
@@ -10,8 +10,6 @@ type TCheckboxProps = {
 } & DefaultInputPropsType;
 
 export const Checkbox: FC<TCheckboxProps> = ({ type = 'default', checked, ...restProps }) => {
-	console.log('checked', checked);
-
 	return (
 		<Label>
 			<Input type='checkbox' {...restProps} />
