@@ -11,9 +11,8 @@ export const Cards = () => {
 
 	if (isLoading || !data) return <div>loading...</div>;
 	return (
-		<div>
+		<StyledCardsPage>
 			<Container>
-				{/* <button onClick={() => setFilter(prevState => !prevState)}>Favorite</button> */}
 				<Switcher onClick={() => setFilter(prevState => !prevState)} checked={filter} />
 				<Title>Cats</Title>
 				<CardsList>
@@ -22,12 +21,15 @@ export const Cards = () => {
 					))}
 				</CardsList>
 			</Container>
-		</div>
+		</StyledCardsPage>
 	);
 };
 
+const StyledCardsPage = styled.div`
+	padding: 70px 0;
+`;
+
 const Title = styled.h1`
-	font-size: 40px;
 	text-align: center;
 	margin-bottom: 20px;
 `;

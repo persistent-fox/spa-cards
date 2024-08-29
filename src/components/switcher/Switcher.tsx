@@ -1,5 +1,6 @@
 import { DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
+import { font } from '../../styles/Common';
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
@@ -13,9 +14,9 @@ export const Switcher: FC<TSwitcherProps> = ({ checked, onClick, ...restProps })
 		onClick();
 	};
 	return (
-		<Label htmlFor='switcher'>
+		<Label>
 			<Text>Регулировка фильтра:</Text>
-			<Input checked={checked} type='checkbox' id='switcher' {...restProps} />
+			<Input checked={checked} type='checkbox' {...restProps} />
 			<Switch onClick={toggleSwitcher} />
 		</Label>
 	);
@@ -29,7 +30,11 @@ export const Label = styled.label`
 `;
 
 export const Text = styled.span`
-	font-size: 18px;
+	${font({
+		weight: 700,
+		Fmin: 18,
+		Fmax: 30,
+	})}
 `;
 
 export const Switch = styled.span`
@@ -37,7 +42,7 @@ export const Switch = styled.span`
 	display: block;
 	font-size: 18px;
 	padding: 8px;
-	background-color: #efecec;
+	background-color: ${props => props.theme.colors.primary};
 	border-radius: 18px;
 	width: 60px;
 	height: 36px;
@@ -50,7 +55,7 @@ export const Switch = styled.span`
 		transform: translateY(-50%);
 		width: 30px;
 		height: 30px;
-		background-color: #949494;
+		background-color: ${props => props.theme.colors.grey.medium};
 		border-radius: 50%;
 		transition: all 0.3s;
 	}
@@ -65,5 +70,8 @@ export const Input = styled.input`
 	&:checked + ${Switch}::before {
 		left: 26px;
 		background-color: #942727;
+	}
+	&:checked + ${Switch} {
+		background-color: #ef89894a;
 	}
 `;

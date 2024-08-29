@@ -1,6 +1,7 @@
-import { ChangeEvent, DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
+import { DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../icon';
+import { font } from '../../styles/Common';
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
@@ -43,6 +44,10 @@ export const FakeCheckbox = styled.span`
 	cursor: pointer;
 `;
 export const Text = styled.span`
+	${font({
+		Fmin: 15,
+		Fmax: 25,
+	})}
 	line-height: 1;
 	cursor: pointer;
 `;

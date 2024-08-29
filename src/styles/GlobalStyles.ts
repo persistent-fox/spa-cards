@@ -25,6 +25,22 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 5px;
   }
 
+  h1 {
+    ${font({
+			weight: 700,
+			Fmin: 30,
+			Fmax: 55,
+		})}
+  }
+
+  p {
+    ${font({
+			weight: 400,
+			Fmin: 15,
+			Fmax: 35,
+		})}
+  }
+
   li {
     list-style: none;
   }
@@ -42,12 +58,12 @@ export const GlobalStyles = createGlobalStyle`
 			weight: 700,
 			Fmin: 15,
 			Fmax: 25,
-		})}
-    color: ${props => props.theme.colors.text.dark},
+		})};
+    color: ${props => props.theme.colors.text.dark};
   }
 
   body {
-    background-color: ${props => props.theme.colors.grey.medium};
+    background-color: ${props => props.theme.colors.grey.light};
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react';
 import styled from 'styled-components';
+import { font } from '../../styles/Common';
 
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
@@ -19,6 +20,11 @@ export const StyledButton = styled.button`
 	border-radius: 5px;
 	background-color: #cd4651;
 	transition: all 0.3s;
+	${font({
+		weight: 700,
+		Fmin: 15,
+		Fmax: 35,
+	})}
 	&:hover {
 		background-color: #ac3943;
 	}

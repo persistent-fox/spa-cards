@@ -6,6 +6,7 @@ import { ERoutes } from '../../types/routes.enum';
 import styled from 'styled-components';
 import { Checkbox } from '../checkbox';
 import { Icon } from '../icon';
+import { font } from '../../styles/Common';
 
 type TCardProps = {
 	card: TCard;
@@ -37,7 +38,12 @@ export const Card: FC<TCardProps> = ({ card: { id, title, description, like, img
 };
 
 const Title = styled.h2`
-	font-size: 30px;
+	color: ${props => props.theme.colors.text.dark};
+	${font({
+		weight: 700,
+		Fmin: 20,
+		Fmax: 40,
+	})}
 	text-align: center;
 	margin-bottom: 10px;
 	white-space: nowrap;
@@ -46,7 +52,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-	font-size: 20px;
+	color: ${props => props.theme.colors.text.dark};
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;

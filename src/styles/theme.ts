@@ -1,15 +1,18 @@
 export const theme = {
 	colors: {
+		primary: '#fff',
+		accent: '#cd4651',
 		scroll: {
-			trackDefault: '#000',
-			thumbDefaultSecondary: '#000',
-			thumbDefaultAccent: '#000',
+			trackDefault: '#949494',
+			thumbDefaultSecondary: '#949494',
+			thumbDefaultAccent: '#cd4651',
 		},
 		text: {
-			dark: '#000',
+			dark: '#333030',
 		},
 		grey: {
-			medium: '#fff',
+			medium: '#949494',
+			light: '#f2f2f2',
 		},
 	},
 };
